@@ -1,0 +1,27 @@
+:root {
+    --cell-size: 50px;
+}
+
+.Cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background: orange;
+    display: inline-block;
+    margin: 2px;
+    line-height: var(--cell-size);
+    text-align: center;
+    font-size: 20pt;
+}
+
+.wall {
+    background-color: darkgray;
+}
+
+.valid {
+    background-color: forestgreen;
+}
+
+.used {
+    background-color: #61dafb;
+}
+

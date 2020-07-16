@@ -1,5 +1,3 @@
-const chalkTable = require('chalk-table');
-const chalk = require('chalk');
 const cors = require('cors');
 const bodyParser = require('body-parser')
 const express = require('express');
@@ -11,6 +9,10 @@ app
   .use(cors())
   .use(bodyParser.urlencoded({ extended: false }))
   .use(bodyParser.json())
+  .use(express.static(path.join(__dirname, 'client/build')))
+  .get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  })
   .post('/test', (req, res) => {
     const solution = solve(req.body.maze)
     res.send({solution});
