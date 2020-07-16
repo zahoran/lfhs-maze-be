@@ -24,6 +24,10 @@ function App() {
     });
   }
 
+  const reset = () => {
+    setMaze([...base]);
+  }
+
   const animateSolution = (solution) => {
     console.log('react', solution);
     const mazeCopy = [...maze];
@@ -62,6 +66,7 @@ function App() {
         })
       }
       <button onClick={solve}>Start</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
